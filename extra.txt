@@ -1,0 +1,50 @@
+function make_player()
+  player.x=0
+  player.y=110
+  player_sprite=1
+end
+
+function move_()
+--right
+  if (btnp(1)) then
+    player.sprite+=1
+      if player.sprite > 4 then
+        player.sprite=1
+      end
+ 
+    player.x+=player.speed
+    if player.x > 128 then
+      player.x=0
+      end
+  
+  end
+--left
+  if (btnp(0)) then
+    player.sprite=16
+    player.sprite+=1
+    if player.sprite > 19 then
+      player.sprite=player.left
+    end
+   
+    
+    player.x-=player.speed
+    if player.x < 0 then
+    player.x=127
+    end 	  
+  end--end of left
+end--end of move
+
+
+
+---SLIDING
+
+ --slide
+  if player.running
+  and not btn(0)
+  and not btn(1)
+  and not player.falling
+  and not player.jumping then
+    player.running=false
+    player.sliding=true
+  end
+end
