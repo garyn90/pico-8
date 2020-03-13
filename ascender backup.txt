@@ -1,3 +1,43 @@
+--init
+function _init()
+  --player table
+  player={
+  sprite=1,
+  x=0,
+  y=54,
+  dx=0,
+  dy=0,
+  max_dx=4,
+  max_dy=4,
+  alive=true,
+  speed=2,
+  w=8,
+  h=8,
+  acc=0.5,
+  boost=4,
+  running=false,
+  jumping=false,
+  land=false,
+  reverse=false,
+  collide=false,
+  }
+--ground table
+ground= {
+  sprite=82,
+  h=8,
+  w=8,
+  x=0,
+  y=127,
+  collide=false,
+  }
+
+  gravity=0.4
+  friction=.75
+end
+
+
+
+
 --update, draw
 
 function _update()
